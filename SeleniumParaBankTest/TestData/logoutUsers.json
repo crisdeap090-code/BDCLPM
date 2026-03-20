@@ -1,0 +1,52 @@
+[
+  {
+    "testcase": "TC_Logout_01",
+    "action": "logout",
+    "expected": "logout_success"
+  },
+  {
+    "testcase": "TC_Logout_02",
+    "action": "logout_redirect_home",
+    "expected": "redirect_home"
+  },
+  {
+    "testcase": "TC_Logout_03",
+    "action": "logout_session_remove",
+    "expected": "session_removed"
+  },
+  {
+    "testcase": "TC_Logout_04",
+    "action": "access_account_overview_after_logout",
+    "expected": "require_login"
+  },
+  {
+    "testcase": "TC_Logout_05",
+    "action": "access_transfer_funds_after_logout",
+    "expected": "require_login"
+  },
+  {
+    "testcase": "TC_Logout_06",
+    "action": "browser_back_after_logout",
+    "expected": "access_denied"
+  },
+  {
+    "testcase": "TC_Logout_07",
+    "action": "logout_from_account_overview",
+    "expected": "logout_success"
+  },
+  {
+    "testcase": "TC_Logout_08",
+    "action": "logout_from_transfer_funds",
+    "expected": "logout_success"
+  },
+  {
+    "testcase": "TC_Logout_09",
+    "action": "check_logout_button",
+    "expected": "button_clickable"
+  },
+  {
+    "testcase": "TC_Logout_10",
+    "action": "repeat_logout",
+    "expected": "still_logged_out"
+  }
+]

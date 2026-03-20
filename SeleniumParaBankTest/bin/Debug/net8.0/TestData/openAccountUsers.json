@@ -1,0 +1,67 @@
+[
+  {
+    "testcase": "TC_OpenAccount_01",
+    "action": "create_account",
+    "accountType": "CHECKING",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_02",
+    "action": "create_account",
+    "accountType": "SAVINGS",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_03",
+    "action": "display_account_number",
+    "accountType": "CHECKING",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_04",
+    "action": "create_account",
+    "accountType": "CHECKING",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_05",
+    "action": "create_account",
+    "accountType": "CHECKING",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_06",
+    "action": "create_account",
+    "accountType": "SAVINGS",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_07",
+    "action": "check_dropdown",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_08",
+    "action": "check_button",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_09",
+    "action": "check_url",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_OpenAccount_10",
+    "action": "check_page_load",
+    "expected": true
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "testcase": "TC_Find_01",
+    "action": "search_by_id",
+    "account": "18450",
+    "transactionId": "12345",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_Find_02",
+    "action": "search_by_id",
+    "account": "18450",
+    "transactionId": "999999",
+    "expected": false
+  },
+
+  {
+    "testcase": "TC_Find_03",
+    "action": "search_by_date",
+    "account": "18350",
+    "date": "10-03-2026",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_Find_04",
+    "action": "search_by_date",
+    "date": "2026/03/10",
+    "expected": false
+  },
+
+  {
+    "testcase": "TC_Find_05",
+    "action": "search_by_date_range",
+    "fromDate": "03-01-2026",
+    "toDate": "03-10-2026",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_Find_06",
+    "action": "search_by_date_range",
+    "fromDate": "03-15-2026",
+    "toDate": "03-10-2026",
+    "expected": false
+  },
+
+  {
+    "testcase": "TC_Find_07",
+    "action": "search_by_amount",
+    "amount": "100",
+    "expected": true
+  },
+
+  {
+    "testcase": "TC_Find_08",
+    "action": "search_by_amount",
+    "amount": "-100",
+    "expected": false
+  },
+
+  {
+    "testcase": "TC_Find_09",
+    "action": "empty_search",
+    "expected": false
+  },
+
+  {
+    "testcase": "TC_Find_10",
+    "action": "search_by_date_range",
+    "fromDate": "03-01-2026",
+    "toDate": "03-10-2026",
+    "expected": true
+  }
+]

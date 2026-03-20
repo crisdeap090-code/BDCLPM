@@ -1,0 +1,52 @@
+[
+  {
+    "testcase": "TC_AccountOverview_01",
+    "action": "open_account_overview",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_02",
+    "action": "check_balance_display",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_03",
+    "action": "open_account_detail",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_04",
+    "action": "check_account_type",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_05",
+    "action": "check_account_overview_url",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_06",
+    "action": "check_account_table_data",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_07",
+    "action": "access_without_login",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_08",
+    "action": "check_page_load",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_09",
+    "action": "check_table_layout",
+    "expected": true
+  },
+  {
+    "testcase": "TC_AccountOverview_10",
+    "action": "refresh_account_overview",
+    "expected": true
+  }
+]

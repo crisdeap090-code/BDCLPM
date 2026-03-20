@@ -1,0 +1,122 @@
+[
+  {
+    "payeeName": "John Smith",
+    "address": "12 Wall Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10005",
+    "phone": "123456789",
+    "account": "99999",
+    "verifyAccount": "99999",
+    "amount": "100",
+    "expected": true
+  },
+  {
+    "payeeName": "John",
+    "address": "Los Angeles",
+    "city": "California",
+    "state": "CA",
+    "zipCode": "90001",
+    "phone": "88888888",
+    "account": "11111",
+    "verifyAccount": "11111",
+    "amount": "50",
+    "expected": true
+  },
+  {
+    "payeeName": "Michael",
+    "address": "Chicago Street",
+    "city": "Chicago",
+    "state": "IL",
+    "zipCode": "60007",
+    "phone": "77777777",
+    "account": "22222",
+    "verifyAccount": "22222",
+    "amount": "120",
+    "expected": true
+  },
+  {
+    "payeeName": "David",
+    "address": "Texas Road",
+    "city": "Dallas",
+    "state": "TX",
+    "zipCode": "75001",
+    "phone": "66666666",
+    "account": "33333",
+    "verifyAccount": "33333",
+    "amount": "100",
+    "expected": true
+  },
+  {
+    "payeeName": "Anna",
+    "address": "Florida Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zipCode": "33101",
+    "phone": "55555555",
+    "account": "44444",
+    "verifyAccount": "44444",
+    "amount": "-50",
+    "expected": false
+  },
+  {
+    "payeeName": "",
+    "address": "Boston Street",
+    "city": "Boston",
+    "state": "MA",
+    "zipCode": "02101",
+    "phone": "44444444",
+    "account": "55555",
+    "verifyAccount": "55555",
+    "amount": "100",
+    "expected": false
+  },
+  {
+    "payeeName": "Robert",
+    "address": "Seattle Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zipCode": "98101",
+    "phone": "33333333",
+    "account": "66666",
+    "verifyAccount": "66666",
+    "amount": "150",
+    "expected": true
+  },
+  {
+    "payeeName": "Jennifer",
+    "address": "Las Vegas Blvd",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zipCode": "88901",
+    "phone": "22222222",
+    "account": "77777",
+    "verifyAccount": "77777",
+    "amount": "200",
+    "expected": true
+  },
+  {
+    "payeeName": "William",
+    "address": "Denver Street",
+    "city": "Denver",
+    "state": "CO",
+    "zipCode": "80014",
+    "phone": "11111111",
+    "account": "88888",
+    "verifyAccount": "88888",
+    "amount": "90",
+    "expected": true
+  },
+  {
+    "payeeName": "Sophia",
+    "address": "Phoenix Road",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zipCode": "85001",
+    "phone": "99999999",
+    "account": "99999",
+    "verifyAccount": "99999",
+    "amount": "300",
+    "expected": true
+  }
+]
