@@ -3,21 +3,21 @@
     "DataSetId": "LOAN_01",
     "LoanAmount": "1000",
     "DownPayment": "200",
-    "FromAccount": "ACCOUNT_A",
+    "FromAccount": "14565",
     "Expected": "Pass"
   },
   {
     "DataSetId": "LOAN_02",
     "LoanAmount": "",
     "DownPayment": "",
-    "FromAccount": "ACCOUNT_A",
+    "FromAccount": "14565",
     "Expected": "Fail"
   },
   {
     "DataSetId": "LOAN_03",
     "LoanAmount": "abc / -100",
     "DownPayment": "xyz / -50",
-    "FromAccount": "ACCOUNT_A",
+    "FromAccount": "14565",
     "Expected": "Fail"
   }
 ]

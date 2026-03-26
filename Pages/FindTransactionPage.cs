@@ -1,4 +1,3 @@
-
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -13,28 +12,59 @@ public class FindTransactionPage
         _driver = driver;
     }
 
+    private WebDriverWait Wait(int seconds = 10)
+    {
+        return new WebDriverWait(_driver, TimeSpan.FromSeconds(seconds));
+    }
+
+    private void WaitUntilFormReady()
+    {
+        var wait = Wait();
+
+        wait.Until(d =>
+            d.FindElements(By.Id("accountId")).Count > 0 &&
+            d.FindElements(By.Id("transactionDate")).Count > 0 &&
+            d.FindElements(By.Id("fromDate")).Count > 0 &&
+            d.FindElements(By.Id("toDate")).Count > 0 &&
+            d.FindElements(By.Id("amount")).Count > 0);
+    }
+
     public void OpenPage()
     {
-        _driver.FindElement(By.LinkText("Find Transactions")).Click();
+        var wait = Wait();
+        wait.Until(d => d.FindElement(By.LinkText("Find Transactions"))).Click();
+        WaitUntilFormReady();
     }
 
     public bool IsPageDisplayed()
     {
-        return _driver.PageSource.Contains("Find Transactions");
+        try
+        {
+            WaitUntilFormReady();
+            return _driver.PageSource.Contains("Find Transactions");
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public bool AreSearchControlsDisplayed()
     {
-        return _driver.FindElements(By.Id("accountId")).Any()
-            && _driver.FindElements(By.Id("transactionDate")).Any()
-            && _driver.FindElements(By.Id("fromDate")).Any()
-            && _driver.FindElements(By.Id("toDate")).Any()
-            && _driver.FindElements(By.Id("amount")).Any();
+        try
+        {
+            WaitUntilFormReady();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public void SelectAccount(string account)
     {
-        var dropdown = new SelectElement(_driver.FindElement(By.Id("accountId")));
+        var dropdown = new SelectElement(Wait().Until(d => d.FindElement(By.Id("accountId"))));
         if (!string.IsNullOrWhiteSpace(account))
             dropdown.SelectByText(account);
     }
@@ -43,6 +73,7 @@ public class FindTransactionPage
     {
         Fill("transactionDate", date);
         ClickFind(0);
+        WaitForResult();
     }
 
     public void FindByDateRange(string fromDate, string toDate)
@@ -50,12 +81,14 @@ public class FindTransactionPage
         Fill("fromDate", fromDate);
         Fill("toDate", toDate);
         ClickFind(1);
+        WaitForResult();
     }
 
     public void FindByAmount(string amount)
     {
         Fill("amount", amount);
         ClickFind(2);
+        WaitForResult();
     }
 
     public bool HasResultTable()
@@ -77,7 +110,7 @@ public class FindTransactionPage
 
     private void Fill(string id, string? value)
     {
-        var element = _driver.FindElement(By.Id(id));
+        var element = Wait().Until(d => d.FindElement(By.Id(id)));
         element.Clear();
         element.SendKeys(value ?? "");
     }
@@ -91,6 +124,15 @@ public class FindTransactionPage
             return;
         }
 
-        _driver.FindElement(By.XPath("//button[contains(text(),'Find Transactions')]")).Click();
+        Wait().Until(d => d.FindElement(By.XPath("//button[contains(text(),'Find Transactions')]"))).Click();
+    }
+
+    private void WaitForResult()
+    {
+        Wait().Until(d =>
+            d.PageSource.Contains("Transaction Results") ||
+            d.PageSource.Contains("No transactions found") ||
+            d.PageSource.Contains("error") ||
+            d.FindElements(By.Id("transactionTable")).Count > 0);
     }
 }

@@ -18,6 +18,10 @@ public class AccountOverviewPage
     public void OpenAccountOverview()
     {
         _wait.Until(d => d.FindElement(By.LinkText("Accounts Overview"))).Click();
+        _wait.Until(d =>
+            d.Url.Contains("overview.htm") ||
+            d.FindElements(By.Id("accountTable")).Count > 0 ||
+            d.PageSource.Contains("Accounts Overview"));
     }
 
     public bool IsAccountServicesMenuDisplayed()

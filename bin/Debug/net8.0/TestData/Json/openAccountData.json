@@ -2,13 +2,13 @@
   {
     "DataSetId": "OPEN_01",
     "AccountType": "CHECKING",
-    "FromAccount": "ACCOUNT_A",
+    "FromAccount": "14565",
     "Expected": "Pass"
   },
   {
     "DataSetId": "OPEN_02",
     "AccountType": "SAVINGS",
-    "FromAccount": "ACCOUNT_A",
+    "FromAccount": "14565",
     "Expected": "Pass"
   }
 ]

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeleniumParaBankTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcf3637c712469dc51cb2b75908ccda6e274ebd7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SeleniumParaBankTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SeleniumParaBankTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

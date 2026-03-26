@@ -208,3 +208,4 @@ C:\Users\Admin\Downloads\SeleniumParaBankTest_clean_refactored\obj\Debug\net8.0\
 C:\Users\Admin\Downloads\SeleniumParaBankTest_clean_refactored\obj\Debug\net8.0\SeleniumParaBankTest.pdb
 C:\Users\Admin\Downloads\SeleniumParaBankTest_clean_refactored\obj\Debug\net8.0\SeleniumParaBankTest.genruntimeconfig.cache
 C:\Users\Admin\Downloads\SeleniumParaBankTest_clean_refactored\obj\Debug\net8.0\ref\SeleniumParaBankTest.dll
+C:\Users\Admin\Downloads\SeleniumParaBankTest_clean_refactored\obj\Debug\net8.0\SeleniumParaBankTest.sourcelink.json

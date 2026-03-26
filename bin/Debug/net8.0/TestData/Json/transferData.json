@@ -1,43 +1,43 @@
 [
   {
     "DataSetId": "TRF_01",
-    "FromAccount": "ACCOUNT_A",
-    "ToAccount": "ACCOUNT_B",
+    "FromAccount": "14565",
+    "ToAccount": "14676",
     "Amount": "100",
     "Expected": "Pass"
   },
   {
     "DataSetId": "TRF_02",
-    "FromAccount": "ACCOUNT_B",
-    "ToAccount": "ACCOUNT_A",
+    "FromAccount": "14676",
+    "ToAccount": "14565",
     "Amount": "50",
     "Expected": "Pass"
   },
   {
     "DataSetId": "TRF_03",
-    "FromAccount": "ACCOUNT_A",
-    "ToAccount": "ACCOUNT_B",
+    "FromAccount": "14565",
+    "ToAccount": "14676",
     "Amount": "",
     "Expected": "Fail"
   },
   {
     "DataSetId": "TRF_04",
-    "FromAccount": "ACCOUNT_A",
-    "ToAccount": "ACCOUNT_B",
+    "FromAccount": "14565",
+    "ToAccount": "14676",
     "Amount": "abc",
     "Expected": "Fail"
   },
   {
     "DataSetId": "TRF_05",
-    "FromAccount": "ACCOUNT_A",
-    "ToAccount": "ACCOUNT_B",
+    "FromAccount": "14565",
+    "ToAccount": "14676",
     "Amount": "0 / -100",
     "Expected": "Fail"
   },
   {
     "DataSetId": "TRF_06",
-    "FromAccount": "ACCOUNT_A",
-    "ToAccount": "ACCOUNT_A",
+    "FromAccount": "14565",
+    "ToAccount": "14565",
     "Amount": "100",
     "Expected": "Fail"
   }

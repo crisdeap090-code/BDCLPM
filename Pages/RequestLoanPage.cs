@@ -1,4 +1,3 @@
-
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -15,26 +14,51 @@ public class RequestLoanPage
         _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
     }
 
+    private void WaitUntilFormReady()
+    {
+        _wait.Until(d =>
+            d.FindElements(By.Id("amount")).Count > 0 &&
+            d.FindElements(By.Id("downPayment")).Count > 0 &&
+            d.FindElements(By.Id("fromAccountId")).Count > 0 &&
+            d.FindElements(By.CssSelector("input[value='Apply Now']")).Count > 0);
+    }
+
     public void OpenPage()
     {
         _wait.Until(d => d.FindElement(By.LinkText("Request Loan"))).Click();
+        WaitUntilFormReady();
     }
 
     public bool IsPageDisplayed()
     {
-        return _driver.PageSource.Contains("Apply for a Loan");
+        try
+        {
+            WaitUntilFormReady();
+            return _driver.PageSource.Contains("Apply for a Loan");
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public void RequestLoan(string loanAmount, string downPayment, string fromAccount)
     {
+        WaitUntilFormReady();
+
         Fill("amount", loanAmount);
         Fill("downPayment", downPayment);
 
-        var dropdown = new SelectElement(_driver.FindElement(By.Id("fromAccountId")));
+        var dropdown = new SelectElement(_wait.Until(d => d.FindElement(By.Id("fromAccountId"))));
         if (!string.IsNullOrWhiteSpace(fromAccount))
             dropdown.SelectByText(fromAccount);
 
-        _driver.FindElement(By.CssSelector("input[value='Apply Now']")).Click();
+        _wait.Until(d => d.FindElement(By.CssSelector("input[value='Apply Now']"))).Click();
+
+        _wait.Until(d =>
+            d.PageSource.Contains("Loan Request Processed") ||
+            d.PageSource.Contains("Denied") ||
+            d.PageSource.Contains("error"));
     }
 
     public bool IsLoanProcessed()
@@ -54,7 +78,7 @@ public class RequestLoanPage
 
     private void Fill(string id, string? value)
     {
-        var element = _driver.FindElement(By.Id(id));
+        var element = _wait.Until(d => d.FindElement(By.Id(id)));
         element.Clear();
         element.SendKeys(value ?? "");
     }

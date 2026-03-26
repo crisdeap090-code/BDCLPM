@@ -1,4 +1,3 @@
-
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -13,47 +12,92 @@ public class OpenAccountPage
         _driver = driver;
     }
 
+    private WebDriverWait Wait(int seconds = 10)
+    {
+        return new WebDriverWait(_driver, TimeSpan.FromSeconds(seconds));
+    }
+
+    private void WaitUntilFormReady()
+    {
+        var wait = Wait();
+
+        wait.Until(d =>
+            d.FindElements(By.Id("type")).Count > 0 &&
+            d.FindElements(By.Id("fromAccountId")).Count > 0 &&
+            d.FindElements(By.CssSelector("input[value='Open New Account']")).Count > 0);
+    }
+
     public void OpenPage()
     {
-        _driver.FindElement(By.LinkText("Open New Account")).Click();
+        var wait = Wait();
+        wait.Until(d => d.FindElement(By.LinkText("Open New Account"))).Click();
+        WaitUntilFormReady();
     }
 
     public bool IsPageDisplayed()
     {
-        return _driver.PageSource.Contains("Open New Account");
+        try
+        {
+            WaitUntilFormReady();
+            return _driver.PageSource.Contains("Open New Account");
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public bool AreControlsDisplayed()
     {
-        return _driver.FindElements(By.Id("type")).Any()
-            && _driver.FindElements(By.Id("fromAccountId")).Any()
-            && _driver.FindElements(By.CssSelector("input[value='Open New Account']")).Any();
+        try
+        {
+            WaitUntilFormReady();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public void OpenNewAccount(string accountType, string fromAccount)
     {
-        var typeDropdown = new SelectElement(_driver.FindElement(By.Id("type")));
+        WaitUntilFormReady();
+        var wait = Wait();
+
+        var typeDropdown = new SelectElement(wait.Until(d => d.FindElement(By.Id("type"))));
         typeDropdown.SelectByText(accountType);
 
-        var fromDropdown = new SelectElement(_driver.FindElement(By.Id("fromAccountId")));
+        var fromDropdown = new SelectElement(wait.Until(d => d.FindElement(By.Id("fromAccountId"))));
         if (!string.IsNullOrWhiteSpace(fromAccount))
-        {
             fromDropdown.SelectByText(fromAccount);
-        }
 
-        _driver.FindElement(By.CssSelector("input[value='Open New Account']")).Click();
+        wait.Until(d => d.FindElement(By.CssSelector("input[value='Open New Account']"))).Click();
+
+        wait.Until(d =>
+            d.PageSource.Contains("Account Opened!") ||
+            d.FindElements(By.Id("newAccountId")).Count > 0);
     }
 
     public bool IsAccountCreated()
     {
-        return _driver.PageSource.Contains("Account Opened!");
+        try
+        {
+            return Wait().Until(d =>
+                d.PageSource.Contains("Account Opened!") ||
+                d.FindElements(By.Id("newAccountId")).Count > 0);
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public string GetNewAccountId()
     {
         try
         {
-            return _driver.FindElement(By.Id("newAccountId")).Text.Trim();
+            return Wait().Until(d => d.FindElement(By.Id("newAccountId"))).Text.Trim();
         }
         catch
         {
