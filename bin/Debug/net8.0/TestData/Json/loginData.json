@@ -1,0 +1,26 @@
+[
+  {
+    "DataSetId": "LOGIN_01",
+    "Username": "user_hople_01",
+    "Password": "123456",
+    "Expected": "Pass"
+  },
+  {
+    "DataSetId": "LOGIN_02",
+    "Username": "sai_user",
+    "Password": "123456",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "LOGIN_03",
+    "Username": "user_hople_01",
+    "Password": "sai_pass",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "LOGIN_04",
+    "Username": "",
+    "Password": "",
+    "Expected": "Fail"
+  }
+]

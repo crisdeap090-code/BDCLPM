@@ -1,0 +1,47 @@
+[
+  {
+    "DataSetId": "FIND_01",
+    "Account": "ACCOUNT_A",
+    "Date": "2026-03-01",
+    "Amount": "",
+    "Expected": "Pass",
+    "FromDate": "",
+    "ToDate": ""
+  },
+  {
+    "DataSetId": "FIND_02",
+    "Account": "ACCOUNT_A",
+    "Date": "",
+    "Amount": "",
+    "Expected": "Pass",
+    "FromDate": "2026-03-01",
+    "ToDate": "2026-03-10"
+  },
+  {
+    "DataSetId": "FIND_03",
+    "Account": "ACCOUNT_A",
+    "Date": "",
+    "Amount": "100",
+    "Expected": "Pass",
+    "FromDate": "",
+    "ToDate": ""
+  },
+  {
+    "DataSetId": "FIND_04",
+    "Account": "ACCOUNT_A",
+    "Date": "2099-01-01",
+    "Amount": "",
+    "Expected": "Fail",
+    "FromDate": "",
+    "ToDate": ""
+  },
+  {
+    "DataSetId": "FIND_05",
+    "Account": "ACCOUNT_A",
+    "Date": "",
+    "Amount": "",
+    "Expected": "Fail",
+    "FromDate": "2026-03-10",
+    "ToDate": "2026-03-01"
+  }
+]

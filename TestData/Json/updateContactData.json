@@ -1,0 +1,29 @@
+[
+  {
+    "DataSetId": "UPD_01",
+    "Address": "12 Nguyen Hue",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0909999999",
+    "Expected": "Pass"
+  },
+  {
+    "DataSetId": "UPD_02",
+    "Address": "",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0909999999",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "UPD_03",
+    "Address": "12 Nguyen Hue",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0909999999",
+    "Expected": "Pass"
+  }
+]

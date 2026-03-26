@@ -1,0 +1,23 @@
+[
+  {
+    "DataSetId": "LOAN_01",
+    "LoanAmount": "1000",
+    "DownPayment": "200",
+    "FromAccount": "ACCOUNT_A",
+    "Expected": "Pass"
+  },
+  {
+    "DataSetId": "LOAN_02",
+    "LoanAmount": "",
+    "DownPayment": "",
+    "FromAccount": "ACCOUNT_A",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "LOAN_03",
+    "LoanAmount": "abc / -100",
+    "DownPayment": "xyz / -50",
+    "FromAccount": "ACCOUNT_A",
+    "Expected": "Fail"
+  }
+]

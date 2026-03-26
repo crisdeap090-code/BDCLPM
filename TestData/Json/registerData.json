@@ -1,0 +1,62 @@
+[
+  {
+    "DataSetId": "REG_01",
+    "FirstName": "An",
+    "LastName": "Nguyen",
+    "Address": "123 Le Loi",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0901234567",
+    "SSN": "123456",
+    "Username": "user_moi_01",
+    "Password": "123456",
+    "ConfirmPassword": "123456",
+    "Expected": "Pass"
+  },
+  {
+    "DataSetId": "REG_02",
+    "FirstName": "",
+    "LastName": "Nguyen",
+    "Address": "123 Le Loi",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0901234567",
+    "SSN": "123456",
+    "Username": "",
+    "Password": "123456",
+    "ConfirmPassword": "123456",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "REG_03",
+    "FirstName": "An",
+    "LastName": "Nguyen",
+    "Address": "123 Le Loi",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0901234567",
+    "SSN": "123456",
+    "Username": "user_moi_02",
+    "Password": "123456",
+    "ConfirmPassword": "654321",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "REG_04",
+    "FirstName": "An",
+    "LastName": "Nguyen",
+    "Address": "123 Le Loi",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0901234567",
+    "SSN": "123456",
+    "Username": "user_da_ton_tai",
+    "Password": "123456",
+    "ConfirmPassword": "123456",
+    "Expected": "Fail"
+  }
+]

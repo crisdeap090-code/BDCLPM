@@ -1,0 +1,67 @@
+[
+  {
+    "DataSetId": "BILL_01",
+    "PayeeName": "Dien Luc",
+    "Address": "45 Tran Hung Dao",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0908888888",
+    "Account": "12345678",
+    "VerifyAccount": "12345678",
+    "Amount": "200",
+    "Expected": "Pass"
+  },
+  {
+    "DataSetId": "BILL_02",
+    "PayeeName": "",
+    "Address": "45 Tran Hung Dao",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0908888888",
+    "Account": "",
+    "VerifyAccount": "",
+    "Amount": "200",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "BILL_03",
+    "PayeeName": "Dien Luc",
+    "Address": "45 Tran Hung Dao",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0908888888",
+    "Account": "12345678",
+    "VerifyAccount": "87654321",
+    "Amount": "200",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "BILL_04",
+    "PayeeName": "Dien Luc",
+    "Address": "45 Tran Hung Dao",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0908888888",
+    "Account": "12345678",
+    "VerifyAccount": "12345678",
+    "Amount": "abc",
+    "Expected": "Fail"
+  },
+  {
+    "DataSetId": "BILL_05",
+    "PayeeName": "Dien Luc",
+    "Address": "45 Tran Hung Dao",
+    "City": "HCM",
+    "State": "HCM",
+    "ZipCode": "700000",
+    "Phone": "0908888888",
+    "Account": "12345678",
+    "VerifyAccount": "12345678",
+    "Amount": "0 / -50",
+    "Expected": "Fail"
+  }
+]

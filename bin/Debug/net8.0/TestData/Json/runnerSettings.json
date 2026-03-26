@@ -1,0 +1,9 @@
+[
+  {
+    "BaseUrl": "https://parabank.parasoft.com/parabank/index.htm",
+    "ExistingUsername": "customer",
+    "ExistingPassword": "123",
+    "CapturePassScreenshots": true,
+    "OnlyRunBlankOrNotRunRows": true
+  }
+]
